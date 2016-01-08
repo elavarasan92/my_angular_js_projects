@@ -5,18 +5,20 @@ import java.util.List;
 
 public class InformationTableList {
 	
-	private List informationTableList;
+	private List informationTable;
+
+	public List getInformationTable() {
+		return informationTable;
+	}
+
+	public void setInformationTable(List informationTable) {
+		this.informationTable = informationTable;
+	}
+
 
 	
 
-	public List getInformationTableList() {
-		return informationTableList;
-	}
-
-	public void setInformationTableList(List informationTableList) {
-		this.informationTableList = informationTableList;
-	}
-
+	
 	
 //	@Override
 //	public String toString() {

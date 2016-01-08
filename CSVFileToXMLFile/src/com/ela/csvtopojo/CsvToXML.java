@@ -19,18 +19,30 @@ public class CsvToXML {
 	{
 		
 		 PojoXml pojoxml = PojoXmlFactory.createPojoXml();
+		 
 		 CSVReader reader = new CSVReader(new FileReader("E:\\SharedFolder\\Rajesh\\13_F_Data.csv"));
 		 
+		 String stringOfInformationTable = "informationTable xmlns=\"http://www.sec.gov/edgar/document/thirteenf/informationtable\" xmlns:xsi=\"http://wwww.w3.org/2001/XMLSchema-instance\"";
+		
 		 InformationTableList informationTableList = new InformationTableList();
+		
+		 pojoxml.addFieldAlias(InformationTableList.class, "informationTable",stringOfInformationTable);
+		
 		 List infoList = new ArrayList();
-		 InformationTable informationTable;
-		 Voting voting = new Voting();
+		
+		 infoTable informationTable;
+		 
+		 VotingAuthority voting = new VotingAuthority();
+		 
+		 ShrsOrPrnAmt shrsOrPrnAmt = new ShrsOrPrnAmt();
+		 
+		
 		 String[] nextLine;
 		 
 		 nextLine=reader.readNext();                      //to skip the first line
 		 
 		  while ((nextLine = reader.readNext()) != null) {
-			  informationTable = new InformationTable();
+			  informationTable = new infoTable();
 			  for(int i=0;i<nextLine.length;i++)
 	      {
 	    	  
@@ -38,8 +50,13 @@ public class CsvToXML {
 				     informationTable.setTitleOfClass(nextLine[1]);
 				     informationTable.setCusip(nextLine[2]);
 				     informationTable.setValue(Integer.parseInt(nextLine[3]));
-				     informationTable.setSshPrnamt(Integer.parseInt(nextLine[4]));
-				     informationTable.setSshPrnamtType(nextLine[5]);
+				    
+				     
+				     shrsOrPrnAmt.setSshPrnamt(Integer.parseInt(nextLine[4]));
+				     shrsOrPrnAmt.setSshPrnamtType(nextLine[5]);
+				    
+				     informationTable.setShrsOrPrnAmt(shrsOrPrnAmt);
+				     
 				     informationTable.setPutCall(nextLine[6]);
 				     informationTable.setInvestmentDiscretion(nextLine[7]);
 				     informationTable.setOtherManager(Integer.parseInt(nextLine[8]));
@@ -49,7 +66,7 @@ public class CsvToXML {
 				     voting.setShared(Integer.parseInt(nextLine[10]));
 				     voting.setNone(Integer.parseInt(nextLine[11]));
 				     
-				     informationTable.setVoting(voting);
+				     informationTable.setVotingAuthority(voting);
 				  
 				 // System.out.println(nextLine[i]);
 	    	  
@@ -58,13 +75,15 @@ public class CsvToXML {
 			  
 			  
 		  }
-		  informationTableList.setInformationTableList(infoList);
+		  informationTableList.setInformationTable(infoList);
 		  String xml = pojoxml.getXml(informationTableList);
 		     System.out.println(xml);
 		//  System.out.println("List of information table ##################################"+informationTableList);
 		     
 		     System.out.println("List of xml"+xml);
+		     
 		     return xml;
+		     
 	}
 	
 	

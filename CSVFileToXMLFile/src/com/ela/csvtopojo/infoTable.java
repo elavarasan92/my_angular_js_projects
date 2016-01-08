@@ -2,18 +2,17 @@ package com.ela.csvtopojo;
 
 
 
-public class InformationTable { 
+public class infoTable { 
 	 
 	private String nameOfIssuer;
 	private String titleOfClass;
 	private String cusip;
 	private int value;
-	private int sshPrnamt;
-	private String sshPrnamtType;
+	private ShrsOrPrnAmt shrsOrPrnAmt;
 	private String putCall;
 	private String investmentDiscretion;
 	private int otherManager;
-	private Voting voting;
+	private VotingAuthority votingAuthority;
 	
 	
 	public int getValue() {
@@ -22,12 +21,7 @@ public class InformationTable {
 	public void setValue(int value) {
 		this.value = value;
 	}
-	public int getSshPrnamt() {
-		return sshPrnamt;
-	}
-	public void setSshPrnamt(int sshPrnamt) {
-		this.sshPrnamt = sshPrnamt;
-	}
+	
 	public int getOtherManager() {
 		return otherManager;
 	}
@@ -54,12 +48,7 @@ public class InformationTable {
 	}
 	
 	
-	public String getSshPrnamtType() {
-		return sshPrnamtType;
-	}
-	public void setSshPrnamtType(String sshPrnamtType) {
-		this.sshPrnamtType = sshPrnamtType;
-	}
+	
 	public String getPutCall() {
 		return putCall;
 	}
@@ -73,18 +62,18 @@ public class InformationTable {
 		this.investmentDiscretion = investmentDiscretion;
 	}
 	
-	public Voting getVoting() {
-		return voting;
+
+	public VotingAuthority getVotingAuthority() {
+		return votingAuthority;
 	}
-	public void setVoting(Voting voting) {
-		this.voting = voting;
+	public void setVotingAuthority(VotingAuthority votingAuthority) {
+		this.votingAuthority = votingAuthority;
 	}
-	@Override
-	public String toString() {
-		return "InformationTable [nameOfIssuer=" + nameOfIssuer + ", titleOfClass=" + titleOfClass + ", cusip=" + cusip
-				+ ", value=" + value + ", sshPrnamt=" + sshPrnamt + ", sshPrnamtType=" + sshPrnamtType + ", putCall="
-				+ putCall + ", investmentDiscretion=" + investmentDiscretion + ", otherManager=" + otherManager
-				+ ", voting=" + voting + "]";
+	public ShrsOrPrnAmt getShrsOrPrnAmt() {
+		return shrsOrPrnAmt;
+	}
+	public void setShrsOrPrnAmt(ShrsOrPrnAmt shrsOrPrnAmt) {
+		this.shrsOrPrnAmt = shrsOrPrnAmt;
 	}
 	
 	

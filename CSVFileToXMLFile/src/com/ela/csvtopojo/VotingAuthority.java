@@ -1,6 +1,6 @@
 package com.ela.csvtopojo;
 
-public class Voting {
+public class VotingAuthority {
 	
 	private int sole;
 	private int shared;
