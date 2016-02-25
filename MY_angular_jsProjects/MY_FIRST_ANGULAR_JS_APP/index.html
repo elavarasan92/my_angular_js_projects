@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="th" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <title>OAB</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="app/js/angular.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/services/services.js"></script>
+	
+  </head>
+
+  <body ng-app="oab" ng-controller="loginCtrl">
+  <div class="container">
+ 		<div class="row">
+  <div class="col-md-2"><img src="images/logo.jpg" style="margin-top: 5px;height: 90px;"></div>
+ 
+  <div class="hrline"></div></div>
+  <br>
+
+<div class="row">
+  <div class="col-md-3">
+	  <div class="row pad-15">
+      <div class="col-md-6 pad-left-button"><div class="leftbtn"><center><a href="index.html"><img src="images/login.png"><br>Login</a></center></div></div>
+	    <div class="col-md-6 pad-left-button">
+	      <div class="leftbtn"><center><a href="">
+	        <img src="images/myaccount.png"><br>
+	      Account <br>Summary</a></center></div></div>
+    </div>
+    <div class="row pad-15">
+      <div class="col-md-6 pad-left-button"><div class="leftbtn"><center><a href=""><img src="images/transfer.png"><br>Transfer</a></center></div></div>
+      <div class="col-md-6 pad-left-button"> <div ><center></center></div></div>
+    </div>
+    
+  </div>
+  <div class="col-md-5 pull-left box-shadow-25">
+    <h3 class="bluecolor"><b>Member Login</b></h3>
+    <div class="loginbg">
+      <div class="transbox">
+        <div>
+          <div id="login">
+		   <div>
+			<h1>First Name <span ng-bind="firstName"></span></h1>
+		   </div>
+            <form style="margin-left:60px;">
+              <fieldset class="clearfix">
+                <p>
+                  <img src="images/username.png" height="30px" width="30px" style="margin-right:5px;"><input type="text" id="LoginUsername" placeholder="Username"   required>
+                </p>
+                <!-- JS because of IE support; better: placeholder="Username" -->
+                <p>
+                  <img src="images/passkey.png" height="30px" width="30px" style="margin-right:5px;"><input type="password"  id="LoginPassword" placeholder="Password"  required>
+                </p>
+                <!-- JS because of IE support; better: placeholder="Password" -->
+                <p style="margin-left:35px;">
+                  <input type="button" id="loginSubmit" value="Login" ng-click="getPersonDetails()">
+                </p>
+              </fieldset>
+            </form>
+            <p class="bluecolor checkbox">
+              
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+
+  
+ <!-- middle -->
+  <!-- right -->
+  <div class="col-md-4">
+    <div><h3 class="bluecolor"><b>Promotion</b></h3>Credit card Offer</div>
+  <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators carosel-slider">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3">
+        <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      margin: auto;	
+  }
+        </style>
+      </li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/img1.jpg" alt="Chania" width="340" height="241">
+      </div>
+
+      <div class="item">
+         <img src="images/img2.jpg" alt="Chania" width="340" height="241">
+      </div>
+    
+      <div class="item">
+        <img src="images/img1.jpg" alt="Flower"  width="340" height="241">
+      </div>
+
+      <div class="item">
+         <img src="images/img2.jpg" alt="Flower" width="340" height="241">
+      </div>
+    </div>
+  
+</div>
+<br>
+<div><p>Buy now and pay later. All you need to do is to choose your preference of the available categories and start your shopping. For security reasons, we have introduced Internet Shopping Card  for your online purchases. So, feel free to shop in the digital world with no fear of fraud. </div> 
+  <div id="footer"><p><i>Copyright © 2015 Infra Bank | All Rights Reserved</i></p>
+</div>
+</div>
+
+  </body>
+
+
+
+
+</html>
+

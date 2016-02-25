@@ -1,0 +1,98 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script>
+var app = angular.module('booksInventoryApp', []);
+
+app.controller('booksCtrl', function($scope,bookService) {
+	//$scope.items = [];
+	bookService.getlist().then(function(data) { $scope.data = data; console.log(data); });
+});
+
+app.factory('bookService', function ($http, $q){
+    var factory = {};
+    factory.getlist = function(){
+        var defer = $q.defer();
+		var getAllAccountsReqJson = '{"map":{"Service":"FetchAccounts","Channel":"IB","CustomerId":"CIF0001","Module":"Account","SessionId":"CIF0001183044"}}';
+			//blockUI.start("Loading...");
+			$http.post('http://172.25.0.52:3030/OABDemo/service',getAllAccountsReqJson).success(function(response,status){
+		
+		//CIF0001183044
+        //$http.get("https://whispering-woodland-9020.herokuapp.com/getAllBooks").success(function(response) {
+            // alter data if needed
+			console.log(response);
+            defer.resolve(response);
+        }).
+        error(function(data, status, headers, config) {
+            defer.reject();
+        });
+        return defer.promise;
+    }
+    return factory;
+});
+</script>
+<article ng-app="booksInventoryApp">
+  <section ng-controller="booksCtrl">
+    <h2 ng-repeat="listofData in data.listofDataset">{{listofData.setname}}</h2>    
+  </section>
+</article>
+
+<!--
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script>
+var app = angular.module('booksInventoryApp', []);
+
+app.controller('booksCtrl', function($scope,bookService) {
+	//$scope.items = [];
+	bookService.getlist().then(function(data) { $scope.data = data; console.log(data); });
+});
+
+app.factory('bookService', function ($http, $q){
+    var factory = {};
+    factory.getlist = function(){
+        var defer = $q.defer();
+		
+		//CIF0001183044
+        $http.get("https://whispering-woodland-9020.herokuapp.com/getAllBooks").success(function(response) {
+            // alter data if needed
+			console.log(response);
+            defer.resolve(response);
+        }).
+        error(function(data, status, headers, config) {
+            defer.reject();
+        });
+        return defer.promise;
+    }
+    return factory;
+});
+</script>
+<article ng-app="booksInventoryApp">
+  <section ng-controller="booksCtrl">
+    <h2 ng-repeat="book in data.books">{{book.name}}</h2>    
+  </section>
+</article>
+
+
+
+
+-->
+
+
+<!--
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script>
+var app = angular.module('booksInventoryApp', []);
+
+app.controller('booksCtrl', function($scope, $http) {
+
+  $http.get("https://whispering-woodland-9020.herokuapp.com/getAllBooks")
+    .then(function(response) {
+      $scope.data = response.data;
+    });
+});
+</script>
+<article ng-app="booksInventoryApp">
+  <section ng-controller="booksCtrl">
+    <h2 ng-repeat="book in data.books">{{book.name}}</h2>    
+  </section>
+</article>-->

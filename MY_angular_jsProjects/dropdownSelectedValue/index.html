@@ -1,0 +1,41 @@
+﻿
+<html>
+<head>
+<title>get selected value from dropdownlist in angularjs</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module('sampleapp', [])
+app.controller('samplecontrol', function ($scope) {
+$scope.sample = [{
+id: '1',
+name: 'Suresh Dasari'
+}, {
+id: '2',
+name: 'Rohini Alavala'
+}, {
+id: '3',
+name: 'Mahendra Dasari'
+}, {
+id: '4',
+name: 'Madhav Sai'
+}, {
+id: '5',
+name: 'Mahesh Dasari'
+}, {
+id: '6',
+name: 'Sateesh Alavala'
+}];
+});
+</script>
+</head>
+<body data-ng-app="sampleapp" data-ng-controller="samplecontrol">
+<form id="form1">
+Select Name:
+<select data-ng-model="ddlvalue">
+<option value="">--Select--</option>
+<option data-ng-repeat="t in sample" value="">{{t.name}}</option>
+</select><br />
+Selected Value is:{{ddlvalue}}
+</form>
+</body>
+</html>

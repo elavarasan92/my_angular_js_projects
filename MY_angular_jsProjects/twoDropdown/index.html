@@ -1,0 +1,83 @@
+﻿<body ng-app="app" ng-controller="Ctrl">
+    <!--<select ng-model="person_data" ng-options="detail as detail.name for detail in details.data"></select>{{person_data}}<br />-->
+  
+   <select ng-model="name" ng-options="data as data.name for data in details"></select>{{name}}
+   <select ng-model="month" ng-options="data as data.month for data in name.grades"></select>{{month}}
+</body>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
+<script>
+        var app = angular.module("app", []);
+        app.controller('Ctrl', function ($scope) {
+			  $scope.name = "elavarasan";
+            var details = {
+              
+			  "data":[{
+                  "name": "elavarasan",
+                  "grades": [
+				  {"month":"march",
+				  "grade":"A",
+				  "subjects":[
+				  {"subject":"tamil",
+					"mark":"77"
+				  },
+				  {"subject":"English",
+					"mark":"88"
+				  }
+				  ]
+				  },
+				  {"month":"april",
+				  "grade":"A+",
+				  "subjects":[
+				  {"subject":"maths",
+					"mark":"77"
+				  },
+				  {"subject":"science",
+					"mark":"88"
+				  }
+				  ]
+				  }
+				  
+				  ]
+              }, {
+                  "name": "ramesh",
+                  "grades": [
+				  {"month":"may",
+				  "grade":"A+",
+				  "subjects":[
+				  {"subject":"physics",
+					"mark":"77"
+				  },
+				  {"subject":"chemistry",
+					"mark":"88"
+				  }
+				  ]
+				  },
+				  {"month":"june",
+				  "grade":"S+",
+				  "subjects":[
+				  {"subject":"geography",
+					"mark":"77"
+				  },
+				  {"subject":"civics",
+					"mark":"88"
+				  }
+				  ]
+				  }
+				  
+				  ]
+              }]
+			  }
+            ;
+            //$scope.details = details;
+			$scope.details=[];
+			angular.forEach(details.data, function(detail, key) {
+			if(detail.name==$scope.name)
+			{
+			alert("inside Elavarasan");
+			 $scope.details.push(detail);
+			 alert(detail);
+			}
+			
+			});
+        });
+</script>

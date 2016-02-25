@@ -1,0 +1,105 @@
+﻿{  
+   "states":[  
+      {  
+         "state_name":"Maharashtra",
+         "districts":[  
+            {  "state_id":"MH",
+               "district_name":"Ahmednagar",
+               "placeOfInterests":[  
+                  {  
+                     "spotName":"SalabatKhanTomb",
+                     "description":"Chand Bibi Palace - Actually the tomb of Salabat Khan, this is a solid three-storey stone structure situated on the crest of a hill 13 km from Ahmednagar city.",
+					 "image": "images/AhmedNagar/salabat.png"
+                  },
+                  {  
+                     "spotName":"MeherBabaSamadhi",
+                     "description":"Meherabad, where the samadhi (tomb) of the spiritual master Meher Baba is a place of pilgrimage, visited by thousands each year, particularly on the anniversary of his death, Amartithi. His later residence was at Meherazad (near Pimpalgaon village), approximately nine miles north of Ahmednagar.",
+					 "image": "images/AhmedNagar/meherbaba.jpg"
+                  }
+               ]
+            },
+            {  "state_id":"MH",
+               "district_name":"Aurangabad",
+               "placeOfInterests":[  
+                  {  
+                     "spotName":"Gateways",
+                     "description":"The city is also famous for the 52 gateways built during Mughal era which gives it the name of City of Gates.",
+					 "image": "images/Aurangabad/bhadkal.jpg"
+                  },
+                  {  
+                     "spotName":"SalimAliLake",
+                     "description":"Popularly known as Salim Ali Talab is located in the northern part of the city near Delhi Gate, opposite Himayat Bagh. During the Mughal period it was known as Khiziri Talab.",
+					 "image": "images/Aurangabad/salimali.jpg"
+                  }
+               ]
+            },
+            {   "state_id":"MH",
+               "district_name":"Mumbai",
+               "placeOfInterests":[  
+                  {  
+                     "spotName":"HajiAliDargah",
+                     "description":"The Sultanate's patronage led to the construction of many mosques, prominent being the Haji Ali Dargah in Worli, built in honour of the Muslim saint Haji Ali in 1431.",
+					 "image": "images/Mumbai/hajiali.jpg"
+                  },
+                  {  
+                     "spotName":"MadhFort",
+                     "description":"The Portuguese also built several fortifications around the city like the Bombay Castle, Castella de Aguada (Castelo da Aguada or Bandra Fort), and Madh Fort.",
+					 "image": "images/Mumbai/madhfort.jpg"
+                  }
+               ]
+            }
+         ]
+      },
+      {  
+         "state_name":"Maharshtra1",
+         "districts":[  
+            {   "state_id":"MH1",
+               "district_name":"Ahmednagar1",
+               "placeOfInterests":[  
+                  {  
+                     "spotName":"SalabatKhanTomb1",
+                     "description":"Chand Bibi Palace - Actually the tomb of Salabat Khan, this is a solid three-storey stone structure situated on the crest of a hill 13 km from Ahmednagar city.",
+					 "image": "images/AhmedNagar/meherbaba.jpg"
+                  },
+                  {  
+                     "spotName":"MeherBabaSamadhi1",
+                     "description":"Meherabad, where the samadhi (tomb) of the spiritual master Meher Baba is a place of pilgrimage, visited by thousands each year, particularly on the anniversary of his death, Amartithi. His later residence was at Meherazad (near Pimpalgaon village), approximately nine miles north of Ahmednagar.",
+					 "image": "images/AhmedNagar/meherbaba.jpg"
+                  }
+               ]
+            },
+            {   "state_id":"MH1",
+               "district_name":"Aurangabad1",
+               "placeOfInterests":[  
+                  {  
+                     "spotName":"Gateways1",
+                     "description":"The city is also famous for the 52 gateways built during Mughal era which gives it the name of City of Gates.",
+					 "image": "images/AhmedNagar/meherbaba.jpg"
+                  },
+                  {  
+                     "spotName":"SalimAliLake1",
+                     "description":"Popularly known as Salim Ali Talab is located in the northern part of the city near Delhi Gate, opposite Himayat Bagh. During the Mughal period it was known as Khiziri Talab.",
+					 "image": "images/AhmedNagar/meherbaba.jpg"
+                  }
+               ]
+            },
+            {   "state_id":"MH1",
+               "district_name":"Mumbai1",
+               "placeOfInterests":[  
+                  {  
+                     "spotName":"HajiAliDargah1",
+                     "description":"The Sultanate's patronage led to the construction of many mosques, prominent being the Haji Ali Dargah in Worli, built in honour of the Muslim saint Haji Ali in 1431.",
+					 "image": "images/AhmedNagar/meherbaba.jpg"
+                  },
+                  {  
+                     "spotName":"MadhFort1",
+                     "description":"The Portuguese also built several fortifications around the city like the Bombay Castle, Castella de Aguada (Castelo da Aguada or Bandra Fort), and Madh Fort.",
+					 "image": "images/AhmedNagar/meherbaba.jpg"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
+

@@ -1,0 +1,63 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUt3nnMdyLi1vpQcYTQGUuucSwnxKQh1Q" type="text/javascript"></script>
+<script>
+var app = angular.module('booksInventoryApp', []);
+app.controller('booksCtrl', function($scope,bookService) {
+	//$scope.items = [];
+	bookService.getlist().then(function(data) { $scope.data = data; console.log(data); });
+});
+app.factory('bookService', function ($q){
+    var factory = {};
+    factory.getlist = function(){
+        var defer = $q.defer();	
+		   navigator.geolocation.getCurrentPosition(function(position) {
+                lat = position.coords.latitude;
+                lng = position.coords.longitude;
+                var geocoder;			
+                geocoder = new google.maps.Geocoder();
+                var latlng = new google.maps.LatLng(lat, lng);
+                geocoder.geocode({
+                        'latLng': latlng
+                    },
+                    function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+						var state;
+                            if (results[0]) {
+								
+                                var add = results[0].formatted_address;
+                                var value = add.split(",");
+                                count = value.length;
+                                country = value[count - 1];
+                                state_pincode = value[count - 2];
+                                res_state = state_pincode.split(" ");
+                                state = res_state[1];
+                                city = value[count - 3];
+                               alert("state name is: " + state);
+							   defer.resolve(state);
+                               
+                            } else {
+                                alert("address not found");
+                            }
+							//nearMe(state);
+							
+                        } else {
+                            alert("Geocoder failed due to: " + status);
+                        }						
+                    }
+                );				
+            });
+			//function nearMe (state){
+			//defer.resolve(state);
+		//alert("state-----"+state);
+				
+		//}
+        return defer.promise;
+    }
+    return factory;
+});
+</script>
+<article ng-app="booksInventoryApp">
+  <section ng-controller="booksCtrl">
+    <p> {{data}}</p>    
+  </section>
+</article>

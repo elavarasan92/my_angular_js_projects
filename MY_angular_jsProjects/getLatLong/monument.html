@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="googleMap">
+
+<head>
+    <title>MAP
+    </title>
+</head>
+
+<body>
+    <div class="container" ng-controller="monumentCtrl">
+
+		<li>{{placeOfInterest_object.spotName}}</li>
+	    <img ng-src="{{placeOfInterest_object.image}}" /> 
+	    <b>Description:</b> {{placeOfInterest_object.description}}
+	
+
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUt3nnMdyLi1vpQcYTQGUuucSwnxKQh1Q" type="text/javascript"></script>
+    <script src="js/angular.min.js"></script>
+	<script src="js/ngStorage.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

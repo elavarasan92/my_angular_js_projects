@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="googleMap">
+
+<head>
+    <title>MAP
+    </title>
+</head>
+
+<body>
+    <div class="container" ng-controller="mapCtrl">
+        <button ng-click="makeArray()">Click Me</button>
+        <p>state:{{name_of_state}}</p>
+        <select ng-model="district" ng-options="district as district.district_name for district in district_data"></select><br />
+        <select  ng-model="placeOfInterest_model" ng-options="placeOfInterest as placeOfInterest.spotName for placeOfInterest in district.placeOfInterests"></select>{{placeOfInterest_model}}
+		<li>{{placeOfInterest_model.spotName}}</li>
+	    <img ng-src="{{placeOfInterest_model.image}}" /> 
+	    <b>Description:</b> {{placeOfInterest_model.description}}
+		<button class="btnS btn-success ctrl-btn" ng-click = "selectedMonument()" ng-disabled="!placeOfInterest_model"> Submit</button>
+
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUt3nnMdyLi1vpQcYTQGUuucSwnxKQh1Q" type="text/javascript"></script>
+    <script src="js/angular.min.js"></script>
+	<script src="js/ngStorage.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

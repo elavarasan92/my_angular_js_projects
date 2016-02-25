@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body ng-app="list" ng-controller="ListCtrl">
+  <h3>List of States</h3>
+ 
+  
+  <div >
+    <ul ng-repeat="state in states">
+      <!--<li>{{state.state_name}}</li>-->
+	  <li>{{state.state_name}}</li>
+    </ul>
+  </div>
+
+  <h3>List of Districts</h3>
+   <select ng-model="district" ng-options="district as district.district_name for district in districts"></select><br />
+ <!-- <div>
+    <ul ng-repeat="district in districts">
+      <li>{{district.district_name}}</li>
+    </ul>
+  </div>-->
+  
+  <h3>List of TouristSpots</h3>
+  
+  <div>
+    <ul ng-repeat="placeOfInterest in placeOfInterests">
+      <li>{{placeOfInterest.spotName}}</li>
+	  <img ng-src="{{placeOfInterest.image}}" /> 
+	<b>Description:</b> {{placeOfInterest.description}}
+    </ul>
+  </div>
+
+</html>
